@@ -8,7 +8,7 @@ import (
 	"gorm.io/gorm"
 )
 
-var urlSN = "root:admin@tcp(localhost:3306)/mydb"
+var urlSN = "root:admin@tcp(localhost:3306)/mydb?parseTime=true"
 var err error
 
 func DataMigration() {
