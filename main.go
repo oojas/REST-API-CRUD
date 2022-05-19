@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"CRUDAPI/DB"
+	"CRUDAPI/Routers"
+	"github.com/joho/godotenv"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	godotenv.Load()
+	DB.DataMigration()
+	Routers.Routers()
 }
