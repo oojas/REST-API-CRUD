@@ -21,5 +21,6 @@ func Routers() {
 	router := mux.NewRouter()
 	router.HandleFunc("/createEmployees", Handlers.CreateEmployees).Methods(http.MethodPost)
 	router.HandleFunc("/employees", Handlers.GetEmployees).Methods(http.MethodGet)
+	router.HandleFunc("/employee/{eid}", Handlers.GetEmployeesByID).Methods(http.MethodGet)
 	log.Fatal(http.ListenAndServe(p, router))
 }
