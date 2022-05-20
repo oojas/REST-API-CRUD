@@ -27,3 +27,17 @@ func GetEmployeesByID(w http.ResponseWriter, r *http.Request) {
 	Global.Database.First(&employees, mux.Vars(r)["eid"])
 	json.NewEncoder(w).Encode(employees)
 }
+func UpdateEmployees(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Content-Type", "application/json")
+	var employees Modals.Employee
+	Global.Database.First(&employees, mux.Vars(r)["eid"])
+	json.NewDecoder(r.Body).Decode(&employees)
+	Global.Database.Save(&employees)
+	json.NewEncoder(w).Encode(employees)
+}
+func DeleteEmployees(w http.ResponseWriter, r *http.Request) {
+	w.Header().Add("Content-Type", "application/json")
+	var employee Modals.Employee
+	Global.Database.Delete(&employee, mux.Vars(r)["eid"])
+	json.NewEncoder(w).Encode("Employee is deleted")
+}
