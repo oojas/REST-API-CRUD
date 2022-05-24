@@ -13,7 +13,7 @@ func getPort() string {
 	if port != "" {
 		return ":" + port
 	}
-	return ":8000"
+	return ":3000"
 }
 
 func Routers() {
