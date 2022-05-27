@@ -1,5 +1,5 @@
 # REST-API-CRUD
-The repository deals with the development of rest api using go with the integration of database using gorm and router using mux
+The repository deals with the development of rest api using go with the integration of mysql database using gorm and router using mux
 
 ## Installation process
 
